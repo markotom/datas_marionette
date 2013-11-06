@@ -1,0 +1,18 @@
+<!-- Controls -->
+<div class="btn-group pull-right">
+  <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#" class="reference-edit">Editar referencia</a></li>
+    <li><a href="#" class="reference-destroy">Eliminar referencia</a></li>
+  </ul>
+</div>
+
+<!-- Details -->
+<p><%= markdown(reference) %></p>
+<small class="text-muted">
+  <% if (source) { %>
+    <%- source.author %>. <em><%- source.title %></em>. p. <%- pages %>
+  <% } %>
+</small>

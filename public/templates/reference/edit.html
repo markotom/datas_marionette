@@ -1,0 +1,47 @@
+<div class="page-header">
+  <% if (_id) { %>
+    <a href="#" class="btn btn-success pull-right reference-close">Añadir nueva</a>
+    <h3>Editar referencia</h3>
+  <% } else { %>
+    <h3>Añadir referencia</h3>
+  <% } %>
+</div>
+<form id="reference-form" class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="reference-content" class="col-md-3 control-label">Referencia</label>
+    <div class="col-md-9">
+      <textarea class="form-control" id="reference-content" rows="5" placeholder="Escribe la referencia que quieras añadir"><%- reference %></textarea>
+      <small class="help-block">Puedes usar notación <a href="http://daringfireball.net/projects/markdown/">markdown</a> para el formato</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="book" class="col-md-3 control-label">Fuente</label>
+    <div class="col-md-9">
+      <div id="source-select"></div>
+      <small class="help-block">
+        <a href="#" class="btn btn-sm" data-toggle="modal" data-target="#editSource .modal">
+          <span class="glyphicon glyphicon-plus"></span> Añadir nueva
+        </a>
+      </small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="reference-pages" class="col-md-3 control-label">Página(s)</label>
+    <div class="col-md-9">
+      <input value="<%- pages %>" type="text" class="form-control" id="reference-pages" placeholder="Página(s)">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-3 col-md-9">
+      <input type="hidden" id="reference-id" value="<%- _id %>">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <% if (_id) { %>
+      <button type="button" class="btn btn-default reference-close">Descartar</button>
+      <% } %>
+    </div>
+  </div>
+</form>
+
+<!-- #editSource (modal) -->
+<div id="editSource"></div>
+<!-- /#editSource -->

@@ -1,0 +1,56 @@
+<form id="source-form" role="form" class="form-horizontal">
+  <div class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="modal-label">Añadir fuente</h4>
+        </div>
+        <div class="modal-body">
+
+          <!-- ID -->
+          <input type="hidden" id="source-id" value="">
+
+          <!-- Título -->
+          <div class="form-group">
+            <label for="source-title" class="col-sm-2 control-label">Título</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="source-title" placeholder="Añade el título de la fuente">
+            </div>
+          </div>
+
+          <!-- Autor -->
+          <div class="form-group">
+            <label for="source-author" class="col-sm-2 control-label">Autor</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="source-author" placeholder="Añade el autor">
+              <small class="help-block">Ejemplos: "Nietzsche, Friedrich", "Benjamin, Walter", "Simondon, Gilbert"</small>
+            </div>
+          </div>
+
+          <!-- Editorial -->
+          <div class="form-group">
+            <label for="source-publisher" class="col-sm-2 control-label">Editorial</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="source-publisher" placeholder="Añade la editorial">
+            </div>
+          </div>
+
+          <!-- Fecha de edición -->
+          <div class="form-group">
+            <label for="source-date" class="col-sm-2 control-label">Fecha</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="source-date" placeholder="Añade la fecha de edición">
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Descartar</button>
+          <!-- Submit -->
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
