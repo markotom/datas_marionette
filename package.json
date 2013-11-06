@@ -1,6 +1,6 @@
 {
   "name": "datas",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Bibliographic References and Research Projects Manager",
   "main": "server.js",
   "scripts": {
