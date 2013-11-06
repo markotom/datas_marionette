@@ -26,7 +26,16 @@ define(['underscore'], function (_) {
 
   development = _.defaults({}, defaults);
 
-  production = _.defaults({}, defaults);
+  production = _.defaults({
+    mongo: {
+      user : 'datas',
+      pass : '12345',
+      host : 'paulo.mongohq.com',
+      port : 10003,
+      db   : 'datas',
+      url  : 'mongodb://datas:12345@paulo.mongohq.com:10003/datas'
+    }
+  }, defaults);
 
 
   if ('production' === process.env.NODE_ENV) {
