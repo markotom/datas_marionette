@@ -4,8 +4,9 @@ define([
   'app',
   'markdown',
   'modules/source',
+  'modules/comment',
   'paginator'
-], function (app, markdown, Source, Paginator) {
+], function (app, markdown, Source, Comment, Paginator) {
 
   // Reference Object
   var Reference = {
@@ -214,6 +215,58 @@ define([
     events: {
       'click .reference-edit': 'showForm',
       'click .reference-destroy': 'destroyReference'
+    },
+    onRender: function () {
+      // Comments collection
+      var comments = new Comment.Collection();
+
+      // Fetch comments collection (many requests, so dangerous... I need help!)
+      comments.fetch({
+        // Filter comments by reference
+        data: { reference: this.model.get('_id') }
+      });
+
+      // Show comments inside popover
+      this.showComments(comments);
+
+    },
+    showComments: function (collection) {
+
+      // Get model `id`
+      var id = this.model.get('_id');
+
+      // Set comments composite view
+      var comments = new Comment.Views.List({
+        model: this.model,
+        collection: collection
+      });
+
+      // Get #reference-{id} element
+      this.popover = this.$el.find('#reference-' + id);
+
+      // Set popover options
+      this.popover.popover({
+        html: true,
+        title: 'Comentarios',
+        content: comments.render().el,
+        placement: 'left'
+      }).on('mouseenter', function () {
+        var that = this;
+        setTimeout(function () {
+          $(that).popover("show");
+          $(that).siblings(".popover").on("mouseleave", function () {
+            $(that).popover('hide');
+          });
+        }, 200);
+      }).on("mouseleave", function () {
+        var that = this;
+        setTimeout(function () {
+          comments.delegateEvents();
+          if (!$(".popover:hover").length) {
+            $(that).popover("hide");
+          }
+        }, 200);
+      });
     },
     showForm: function () {
       // Reset form reference

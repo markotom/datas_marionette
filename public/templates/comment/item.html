@@ -1,0 +1,14 @@
+<!-- Comment -->
+<%- comment %>
+
+<!-- More info -->
+<div class="clearfix">
+  <small class="text-muted pull-left">
+    <!-- Created At -->
+    <span class="glyphicon glyphicon-time"></span> <%- moment(created_at).fromNow() %> · 
+     <!-- Controls -->
+    <div class="btn-group">
+      <a href="#" class="remove-comment">Eliminar</a>
+    </div>
+  </small>
+</div>

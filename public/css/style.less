@@ -63,8 +63,6 @@
 @import "@{path}utilities.less";
 @import "@{path}responsive-utilities.less";
 
-//@import '/components/bootstrap/dist/css/bootstrap-theme.min.css';
-
 html, body {
   height: 100%;
 }
@@ -145,4 +143,35 @@ html, body {
   }
 }
 
+.well.reference {
+  .popover {
+    max-width: 400px;
+    .popover-content {
+        width: 400px;
+      .comments-container {
+        max-height: 200px;
+        overflow: scroll;
+      }
+    }
+  }
+}
 
+ul.comments {
+  padding: 0;
+  list-style: none;
+  li {
+    padding: 10px 0;
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
