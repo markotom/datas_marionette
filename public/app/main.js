@@ -11,7 +11,8 @@ requirejs.config({
     marionette    : '../components/backbone.marionette/lib/backbone.marionette.min',
     paginator     : '../components/backbone.paginator/lib/backbone.paginator',
     markdown      : '../components/markdown/lib/markdown',
-    typeahead     : '../components/typeahead.js/dist/typeahead.min'
+    typeahead     : '../components/typeahead.js/dist/typeahead.min',
+    moment        : '../components/moment/min/moment-with-langs.min'
   },
   shim: {
     app: ['marionette', 'bootstrap'],
@@ -20,7 +21,13 @@ requirejs.config({
       exports: 'Backbone'
     },
     marionette: {
-      deps: ['backbone', 'templates', 'typeahead', 'markdown'],
+      deps: [
+        'backbone',
+        'templates',
+        'typeahead',
+        'markdown',
+        'moment'
+      ],
       exports: 'Marionette'
     },
     paginator: {

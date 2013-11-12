@@ -14,6 +14,9 @@ define(['marionette'], function (Marionette) {
   // After initialize
   App.on('initialize:after', function (options) {
     Backbone.history.start();
+
+    // Config language of moment.js
+    moment.lang('es');
   });
 
   // Templates

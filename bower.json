@@ -11,6 +11,7 @@
     "backbone.syphon": "~0.4.1",
     "backbone.paginator": "~0.8.1",
     "markdown": "~0.5.0",
-    "typeahead.js": "~0.9.3"
+    "typeahead.js": "~0.9.3",
+    "moment": "~2.4.0"
   }
 }

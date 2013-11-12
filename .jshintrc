@@ -9,6 +9,7 @@
     "_",
     "$",
     "JST",
+    "moment",
     "define",
     "Backbone",
     "requirejs",
