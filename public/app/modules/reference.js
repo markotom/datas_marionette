@@ -200,8 +200,8 @@ define([
   });
 
   // Reference View Item
-  Reference.Views.Item = Marionette.ItemView.extend({
-    className: 'well',
+  Reference.Views.Item = Marionette.Layout.extend({
+    className: 'well reference',
     template: 'reference/item',
     templateHelpers: function () {
       return {

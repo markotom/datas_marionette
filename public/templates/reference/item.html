@@ -10,9 +10,11 @@
 </div>
 
 <!-- Details -->
-<p><%= markdown(reference) %></p>
-<small class="text-muted">
-  <% if (source) { %>
-    <%- source.author %>. <em><%- source.title %></em>. p. <%- pages %>
-  <% } %>
-</small>
+<div class="reference" id="reference-<%- _id %>">
+  <p><%= markdown(reference) %></p>
+  <small class="text-muted">
+    <% if (source) { %>
+      <%- source.author %>. <em><%- source.title %></em>. p. <%- pages %>
+    <% } %>
+  </small>
+</div>
