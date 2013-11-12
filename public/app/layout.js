@@ -12,6 +12,9 @@ define([
     regions: {
       references: '#references',
       content: '#content'
+    },
+    onRender: function () {
+      $("[data-toggle=popover]").popover();
     }
   });
 
